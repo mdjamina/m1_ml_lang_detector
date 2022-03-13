@@ -1,4 +1,4 @@
-# m1_ml_lang_detector-
+# m1_ml_lang_detector
 Lang detector
 
 
