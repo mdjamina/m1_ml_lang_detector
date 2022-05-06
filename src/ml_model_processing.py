@@ -62,7 +62,7 @@ def main():
 
 
     # data directory
-    data_dir = './data/'
+    data_dir = '../data/'
 
     # pickle dataset path file
     corpus_data_path = data_dir + 'data.pkl'
@@ -70,7 +70,7 @@ def main():
     # pickle output model path file
     output_model_path = data_dir + 'lang_detector.joblib'
 
-    logger.info("Load pickled dataset from file {corpus_data_path}...")
+    logger.info(f"Load pickled dataset from file {corpus_data_path}...")
     #Load pickled dataset from file
     data = pd.read_pickle(corpus_data_path) 
     #print(f'data size: {data.shape}')
