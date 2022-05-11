@@ -16,11 +16,11 @@ def char_tokenizer(text):
     """
     return [c for c in text if c not in ' \t\n']
 
-
+#chargement du modèle pré entrainé
 model = load('../data/lang_detector.joblib')
 
 
-class Languge:
+class Language:
 
     def __init__(self) -> None:
         self.model = model
@@ -34,13 +34,16 @@ class Languge:
         return (lang,lib)
 
 
-language = Languge()
+language = Language()
 
 if __name__ == '__main__':
 
 
-    text = """Этот модуль предоставляет имена для многих типов, необходимых для реализации интерпретатора Python. 
-   Он намеренно избегает включения некоторых типов, возникающих лишь случайно во время обработки, таких как тип listiterator."""
+    
+
+    """
+    text = 'Этот модуль предоставляет имена для многих типов, необходимых для реализации интерпретатора Python. \
+   Он намеренно избегает включения некоторых типов, возникающих лишь случайно во время обработки, таких как тип listiterator.'
 
     print(language.detect(text))  
 
@@ -58,6 +61,17 @@ if __name__ == '__main__':
     text = 'Bu modül, bir Python yorumlayıcısını uygulamak için gereken birçok tür için adlar sağlar.\
        Listeleyici türü gibi, işleme sırasında yalnızca tesadüfen ortaya çıkan bazı türleri dahil etmekten kasıtlı olarak kaçınır.'
     print(language.detect(text))  
+    """
+
+
+    text = input("Enter text: ")
+
+    lang = language.detect(text)[1]
+
+    message = f"It's {lang} language"
+
+    print(message)  
+
 
 
   
